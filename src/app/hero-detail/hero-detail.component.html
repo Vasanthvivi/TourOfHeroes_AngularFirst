@@ -1,0 +1,17 @@
+<p>hero-detail works!</p>
+<button (click)="sendd()">Click to emit from Child </button>
+<div *ngIf="hero" >
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+    </div>
+  </div>
+  <div>
+    <p>This is the secret code received from the parent component {{scode}} & {{datacode}} and <button (click)="fire()">send</button> your message to the parent</p>
+    <div *ngIf="peoples !='undefined'">
+      <p (click)="onClick()">{{peoples + " is presented now and click me to update the details to parent!"}}</p>
+    </div>    
+  </div>

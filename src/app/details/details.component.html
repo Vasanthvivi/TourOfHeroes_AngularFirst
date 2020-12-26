@@ -1,0 +1,14 @@
+<button (click)="goback()">Previous Hero!</button>
+<button (click)="gonext()">Next Hero!</button>
+<div *ngIf="hero"> 
+    Id:{{hero.id}}<br>
+    Name:{{hero.name}}
+    <br>
+    <label>Edit Here,
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+    </label>
+</div>
+<button (click)="back()">ViewResults</button>
+<app-container [idval]="id" >
+      
+</app-container>
