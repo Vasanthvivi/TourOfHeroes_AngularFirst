@@ -9,7 +9,7 @@ import { HeroService } from './hero.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { ListsComponent } from './lists/lists.component';
+
 import { DetailsComponent } from './details/details.component';
 import { ContainerComponent } from './container/container.component';
 
@@ -20,7 +20,7 @@ import { ContainerComponent } from './container/container.component';
     HeroDetailComponent,
     DashboardComponent,
     NotfoundComponent,
-    ListsComponent,
+    
     DetailsComponent,
     ContainerComponent
   ],

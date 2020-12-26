@@ -15,7 +15,7 @@ userurl:string="https://jsonplaceholder.typicode.com/users";
 getusers():Observable<User[]>{
      return this.http.get<User[]>(this.userurl);
 }
-getHero(id: number): Observable<Hero> {
+getHero(id: number): Observable<Hero | undefined> {
     
     return of(Heroes.find(hero => hero.id === id));
   }

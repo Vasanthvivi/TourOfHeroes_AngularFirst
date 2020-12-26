@@ -12,34 +12,37 @@ import {Heroes} from '../mock-heroes';
 })
 export class DetailsComponent implements OnInit {
 public id:any;
-
-public hero:Hero;
-public heroes:Heroes;
+public nid:any;
+public hd:number | null;
+public hero:any;
+public heroes:typeof Heroes;
   constructor(private router:ActivatedRoute, private route:Router, private heroService:HeroService,private location:Location) { }
   ngOnInit(): void {
  this.router.paramMap.subscribe((params: ParamMap) => {
     this.id=params.get('id');
-    
    console.log(this.id);
    this.getHero();
+  
   });
   }
   back(): void {
     this.location.back();
   }
   goback(){
-    this.id=+this.router.snapshot.paramMap.get('id');
-    this.route.navigate(['/detail',--this.id]);
+     this.nid=--this.id;
+    //this.id=+this.router.snapshot.paramMap.get('id');
+    this.route.navigate(['/detail',this.nid]);
   }
   gonext(){
-    this.id=+this.router.snapshot.paramMap.get('id');
-    this.route.navigate(['/detail',++this.id]);
+       this.nid=++this.id;
+   // this.id=+this.router.snapshot.paramMap.get('id');
+    this.route.navigate(['/detail',this.nid]);
   }
  
- 
+
  getHero(): void {
-    const hd = +this.router.snapshot.paramMap.get('id');
-    this.heroService.getHero(hd)
+     this.hd = parseInt(this.router.snapshot.paramMap.get("id"));
+    this.heroService.getHero(this.hd)
       .subscribe(hero => this.hero = hero);
   }
 }
